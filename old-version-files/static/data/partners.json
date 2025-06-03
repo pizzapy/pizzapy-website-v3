@@ -1,0 +1,88 @@
+{
+    "partners": [
+        {
+            "name": "PyTsada",
+            "link": "https://www.facebook.com/pytsada/",
+            "image": "/static/images/partners/PyTsada.png"
+        },
+        {
+            "name": "The Graph Philippines",
+            "link": "https://x.com/TheGraphPH",
+            "image": "/static/images/partners/TheGraphPhilippines.png"
+        },
+        {
+            "name": "Web3 Cebu",
+            "link": "https://www.facebook.com/web3cebu/",
+            "image": "/static/images/partners/Web3Cebu.png"
+        },
+        {
+            "name": "Women Techmakers Cebu",
+            "link": "https://www.facebook.com/wtm.cebu/",
+            "image": "/static/images/partners/WomenTechmakersCebu.png"
+        },
+        {
+            "name": "Cebu WordPress Meetup",
+            "link": "https://www.facebook.com/WPCebu/",
+            "image": "/static/images/partners/WordpressCebu.png"
+        },
+        {
+            "name": "Cebu Game Dev",
+            "link": "https://www.facebook.com/CebuGameDev/",
+            "image": "/static/images/partners/CebuGameDev.png"
+        },
+        {
+            "name": "Python Philippines",
+            "link": "https://python.ph/",
+            "image": "/static/images/partners/PythonPH.png"
+        }
+    ],
+    "partners2": [
+        {
+            "name": "DevCon Cebu",
+            "link": "https://devcon.ph/cebu/",
+            "image": "/static/images/partners/DevCon.png"
+        },
+        {
+            "name": "Game Developers Association of the Philippines",
+            "link": "https://gdap.org.ph/",
+            "image": "/static/images/partners/GameDevelopersAssociationofthePhilippines.png"
+        },
+        {
+            "name": "GDG Cebu",
+            "link": "https://gdgcebu.org/",
+            "image": "/static/images/partners/GDGCebu.png"
+        },
+        {
+            "name": "JavaScript Cebu",
+            "link": "https://jscebu.org/",
+            "image": "/static/images/partners/JavaScriptCebu.png"
+        },
+        {
+            "name": "Laravel Cebu",
+            "link": "https://www.laravelcebu.org/",
+            "image": "/static/images/partners/LaravelCebu.png"
+        },
+        {
+            "name": "DurianPy - Davao Python User Group",
+            "link": "https://www.meetup.com/durianpy/",
+            "image": "/static/images/partners/DurianPy.png"
+        }
+    ],
+    "affiliated": [
+        {
+            "name": "CIB.O",
+            "link": "https://www.cib.org.ph/",
+            "image": "/static/images/partners/CIBO.png"
+        },
+        {
+            "name": "Philippine Tech Community",
+            "link": "https://www.phtechcommunity.org/",
+            "image": "/static/images/partners/PhilippineTechCommunity.png"
+        },
+        {
+            "name": "Python Software Foundation",
+            "link": "https://www.python.org/psf-landing/",
+            "image": "/static/images/partners/Python Software Foundation.png"
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+[
+    {
+        "title": "SurfBARD Lessons: LLM Basics",
+        "host": "Dorell J.",
+        "cohosts": "2 others",
+        "image": "https://via.placeholder.com/250x150",
+        "hostImage": "https://via.placeholder.com/40",
+        "link": "https://www.example.com/event1"
+    },
+    {
+        "title": "Analytics Engineering with SQL and dbt",
+        "host": "Neriah BJ A.",
+        "cohosts": "Jacob M.",
+        "image": "https://via.placeholder.com/250x150",
+        "hostImage": "https://via.placeholder.com/40",
+        "link": "https://www.example.com/event2"
+    },
+    {
+        "title": "Ethics of AI: A Roundtable Discussion",
+        "host": "Ron Michael K.",
+        "cohosts": "3 others",
+        "image": "https://via.placeholder.com/250x150",
+        "hostImage": "https://via.placeholder.com/40",
+        "link": "https://www.example.com/event3"
+    },
+    {
+        "title": "Django Nights",
+        "host": "Neriah BJ A.",
+        "cohosts": "",
+        "image": "https://via.placeholder.com/250x150",
+        "hostImage": "https://via.placeholder.com/40",
+        "link": "https://www.example.com/event4"
+    },    
+{
+        "title": "1111Analytics Engineering with SQL and dbt",
+        "host": "Neriah BJ A.",
+        "cohosts": "Jacob M.",
+        "image": "https://via.placeholder.com/250x150",
+        "hostImage": "https://via.placeholder.com/40",
+        "link": "https://www.example.com/event2"
+    },
+    {
+        "title": "2222Ethics of AI: A Roundtable Discussion",
+        "host": "Ron Michael K.",
+        "cohosts": "3 others",
+        "image": "https://via.placeholder.com/250x150",
+        "hostImage": "https://via.placeholder.com/40",
+        "link": "https://www.example.com/event3"
+    }
+]

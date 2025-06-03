@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+PizzaPy Cebu Python Users Group
+{% endblock %}
+
+{% block content %}
+{% include 'partials/header.html' %}
+{% include 'partials/events/hero.html' with event=first_event %}
+{% include 'partials/events/events.html' with events=other_events %}
+{% endblock %}
+{% block footer %}
+{% include 'partials/footer.html' %}
+{% endblock %}

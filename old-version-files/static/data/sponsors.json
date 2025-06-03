@@ -1,0 +1,49 @@
+{
+    "sponsors": [
+        {
+            "name": "Regulated Cloud",
+            "link": "https://regulated.cloud/",
+            "image": "/static/images/sponsors/Regulated Cloud.png"
+        },
+        {
+            "name": "enspace Cebu",
+            "link": "https://enspace.ph",
+            "image": "/static/images/sponsors/Enspace.png"
+        },
+        {
+            "name": "The Company Cebu",
+            "link": "https://thecompany.ph/",
+            "image": "/static/images/sponsors/The Company Cebu.png"
+        },
+        {
+            "name": "From Here Coworking",
+            "link": "https://fromherecebu.com/",
+            "image": "/static/images/sponsors/FROM HERE.png"
+        },
+        {
+            "name": "LegalMatch Philippines",
+            "link": "https://legalmatch.ph/",
+            "image": "/static/images/sponsors/LegalMatch.png"
+        },
+        {
+            "name": "KILSA Philippines",
+            "link": "https://kilsaglobal.com/",
+            "image": "/static/images/sponsors/KILSA.png"
+        },
+        {
+            "name": "DTI Region 7",
+            "link": "https://www.dti.gov.ph/regions/region-7/",
+            "image": "/static/images/sponsors/DTI Central Visayas.png"
+        },
+        {
+            "name": "DOHE Philippines",
+            "link": "https://www.doheglobal.com/",
+            "image": "/static/images/sponsors/DOHE Philippines.png"
+        },
+        {
+            "name": "Prezenter",
+            "link": "https://prezenter.ph/",
+            "image": "/static/images/sponsors/Prezenter.png"
+        }
+    ]
+}

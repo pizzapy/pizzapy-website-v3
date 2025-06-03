@@ -1,0 +1,24 @@
+{
+    "events": [
+        {
+            "name": "Event1",
+            "link": "#yourlink",
+            "image": "/static/images/events/Picture-1.png"
+        },
+        {
+            "name": "Event2",
+            "link": "#yourlink",
+            "image": "/static/images/events/Picture-2.png"
+        },
+        {
+            "name": "Event3",
+            "link": "#yourlink",
+            "image": "/static/images/events/Picture-3.png"
+        },
+        {
+            "name": "Event",
+            "link": "#yourlink",
+            "image": "/static/images/events/Picture.png"
+        }
+    ]
+}
