@@ -1,0 +1,24 @@
+<!--sample how to call the elements in loop-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meetup Events</title>
+</head>
+<body>
+    <h1>Meetup Events</h1>
+    <ul>
+        {% for event in events %}
+        <li>
+            <h2>{{ event.node.title }}</h2>
+            <p>{{ event.node.description }}</p>
+            <p>Event Type: {{ event.node.eventType }}</p>
+
+            <p>Venue: {{ event.node.venue.address }}, {{ event.node.venue.city }}, {{ event.node.venue.postalCode }}</p>
+            <img src="{{ event.node.images.0.source }}" alt="Event Image">
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

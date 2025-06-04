@@ -1,0 +1,48 @@
+<div class="h-4 px-2 sm:px-10 navbar">
+  {% include 'partials/nav-bar.html' %} {% include 'partials/_logo.html' %}
+
+  <!-- Hide on small screens, show on medium screens and up -->
+  <div class="hidden sm:flex navbar-center">
+    <div class="flex-none">
+      <ul class="px-1 menu menu-horizontal">
+        <li>
+          <a
+            href="{{ url_for('index') }}"
+            class="dark:text-white hover:text-yellow-600 dark:hover:text-yellow-600"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="{{ url_for('about') }}"
+            class="dark:text-white hover:text-yellow-600 dark:hover:text-yellow-600"
+            >About Us</a
+          >
+        </li>
+        <li>
+          <a
+            href="{{ url_for('events') }}"
+            class="dark:text-white hover:text-yellow-600 dark:hover:text-yellow-600"
+            >Events</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Show Contact Us button on medium and larger screens -->
+  <div class="flex items-center space-x-4 navbar-end hidden sm:flex">
+    <a
+      href="https://www.facebook.com/PizzaPy.PH"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center justify-center w-full text-gray-900 transition duration-150 ease-in-out bg-gray-300 border border-gray-300 rounded-lg sm:w-auto sm:px-6 sm:py-3 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 dark:text-white dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-gray-800">
+      Contact Us
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar (visible on mobile view only) -->
+<div class="sm:hidden sidebar">
+  <!-- Other sidebar content -->
+</div>

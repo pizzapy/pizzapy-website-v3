@@ -13,17 +13,9 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/menu')
-def menu():
-    return render_template('menu.html')
-
-
-@app.route('/order', methods=['GET', 'POST'])
-def order():
-    if request.method == 'POST':
-        # Process the order
-        pass
-    return render_template('order.html')
+@app.route('/events')
+def events():
+    return render_template('events.html')
 
 
 if __name__ == '__main__':

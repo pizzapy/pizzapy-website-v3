@@ -1,0 +1,18 @@
+{% extends 'base.html' %} 
+{% block title %}
+ PizzaPy Cebu Python Users Group 
+ {% endblock %} 
+ 
+ {% block content %} 
+ {% include 'partials/header.html' %}
+
+<!-- Pass variables to the included templates -->
+{% set event = first_event %} 
+{% include 'partials/events/hero.html' %} 
+{% set events = other_events %}
+{% include 'partials/events/events.html' %}
+
+{% endblock %} 
+{% block footer %} 
+{% include 'partials/footer.html' %} 
+{% endblock %}

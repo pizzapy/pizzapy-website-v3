@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PizzaPy - About Us</title>
-</head>
-<body>
-    <h1>About PizzaPy</h1>
-    <p>We are a family-owned pizza shop...</p>
-    <a href="/">Home</a>
-    <a href="/menu">View Menu</a>
-    <a href="/order">Order Now</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+PizzaPy Cebu Python Users Group
+{% endblock %}
+
+{% block content %}
+{% include 'partials/header.html' %}
+{% include 'partials/about_us/hero.html' %}
+{% include 'partials/about_us/core.html' %}
+{% include 'partials/about_us/partners.html' %}
+{% include 'partials/about_us/history.html' %}
+{% include 'partials/about_us/events.html' %}
+{% endblock %}
+{% block footer %}
+{% include 'partials/footer.html' %}
+{% endblock %}

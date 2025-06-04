@@ -1,0 +1,28 @@
+<div class="container px-4 py-12 mx-auto sm:px-8 lg:px-16">
+    <div class="flex items-center justify-between mb-8">
+        <h1 class="text-4xl font-bold">Upcoming Events</h1>
+        <a href="https://www.meetup.com/pizzapy-ph/events/" target="_blank" class="text-yellow-400 hover:underline">See
+            all on Meetup &rarr;</a>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3" id="event-cards">
+        <!-- Loop through other_events to generate event cards -->
+        {% for event in events %}
+        <a href="{{ event.shortUrl }}" class="bg-white text-black rounded-lg shadow-md w-full no-underline hover:no-underline transform hover:shadow-lg hover:-translate-y-1 transition-transform duration-200" target="_blank">
+            <div class="relative h-40">
+                <img src="{{ event.images.0.source }}" alt="{{ event.title }}" class="object-cover w-full h-full rounded-t-lg">
+            </div>
+            <div class="p-4">
+                <div class="flex items-start mb-2">
+                    <img src="{{ event.host.memberPhoto.source }}" alt="Host Image" class="flex-shrink-0 w-10 h-10 mr-2 rounded-full">
+                    <div class="flex-1 min-w-0 text-sm tooltip">
+                        <p class="mb-1 font-semibold text-gray-900 truncate">{{ event.title }}</p>
+                        <span class="tooltip-text">{{ event.title }}</span>
+                        <p class="text-gray-600 truncate">Hosted by {{ event.host.name }} </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>

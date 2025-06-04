@@ -1,0 +1,134 @@
+<div
+  class="flex flex-col items-center justify-center w-full px-4 md:px-8 lg:px-16"
+>
+  <h2
+    class="py-6 mb-6 text-4xl text-yellow-500 font-bold text-center dark:text-white"
+  >
+    Special thanks to our sponsors
+  </h2>
+  <div class="wrapper">
+    <div class="scroller"></div>
+  </div>
+</div>
+<style>
+  .wrapper {
+    width: 100%;
+    max-width: 1536px;
+    margin-inline: auto;
+    height: 110px;
+    position: relative;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 1) 20%,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0)
+    );
+    display: flex;
+    align-items: center;
+  }
+
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .scroller {
+    display: flex;
+    width: max-content;
+    animation: scrollLeft 30s linear infinite;
+    gap: 30px;
+  }
+
+  .item {
+    width: 200px;
+    height: 100px;
+    border-radius: 6px;
+    flex: 0 0 auto;
+    transition: transform 0.3s ease;
+    will-change: transform;
+  }
+
+  .item:hover {
+    transform: scale(1.1);
+  }
+</style>
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", () => {
+    const scroller = document.querySelector(".scroller");
+
+    function fetchAndPopulateSponsors() {
+      fetch("../../../static/data/sponsors.json")
+        .then((response) => response.json())
+        .then((data) => {
+          populateScroller(data.sponsors);
+          lazyLoadImages();
+        })
+        .catch((error) => console.error("Error fetching sponsors:", error));
+    }
+
+    function populateScroller(sponsors) {
+      const fragment = document.createDocumentFragment(); // Create a document fragment
+
+      sponsors.forEach((sponsor) => {
+        const item = document.createElement("a");
+        item.href = sponsor.link;
+        item.target = "_blank";
+        item.rel = "noopener noreferrer";
+        item.className = "item";
+        item.innerHTML = `<img data-src="${sponsor.image}" alt="${sponsor.name}" class="object-contain w-full h-full lazy">`;
+        fragment.appendChild(item);
+      });
+
+      // Append the fragment to the scroller
+      scroller.appendChild(fragment);
+
+      // Duplicate items for infinite scrolling
+      duplicateItems();
+    }
+
+    function duplicateItems() {
+      const items = scroller.querySelectorAll(".item");
+      items.forEach((item) => {
+        const clone = item.cloneNode(true);
+        scroller.appendChild(clone);
+      });
+    }
+
+    function lazyLoadImages() {
+      const lazyImages = document.querySelectorAll(".lazy");
+
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.getAttribute("data-src");
+              img.classList.remove("lazy");
+              observer.unobserve(img);
+            }
+          });
+        },
+        {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.1,
+        }
+      );
+
+      lazyImages.forEach((img) => {
+        observer.observe(img);
+      });
+    }
+
+    // Initial fetch and populate
+    fetchAndPopulateSponsors();
+  });
+</script>

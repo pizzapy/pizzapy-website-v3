@@ -1,0 +1,64 @@
+<input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+
+<!-- Navbar -->
+<div class="flex-none sm:hidden">
+  <label
+    for="my-drawer-3"
+    aria-label="open sidebar"
+    class="btn btn-square btn-ghost">
+    <!-- Adjust the width and height using Tailwind CSS classes only and remove the inline width and height -->
+    <svg fill="none" class="w-5 h-5" viewBox="0 0 24 24">
+      <!-- Adjusted to w-6 h-6 for 24x24 dimensions -->
+      <use xlink:href="../../static/css/icons.svg#hamburger"></use>
+    </svg>
+  </label>
+</div>
+
+<div class="z-40 drawer-side">
+  <label
+    for="my-drawer-3"
+    aria-label="close sidebar"
+    class="drawer-overlay"></label>
+
+  <ul
+    class="flex flex-col justify-between min-h-full p-4 menu w-80 bg-base-200 dark:bg-gray-900">
+    <div class="flex items-center justify-center h-full">
+      {% include 'partials/_logo.html' %}
+    </div>
+
+    <!-- Dark mode bg color adjusted for visibility -->
+    <div>
+      <li>
+        <a
+          href="{{ url_for('index') }}"
+          class="dark:text-white hover:text-yellow-600 dark:hover:text-yellow-600"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          href="{{ url_for('about') }}"
+          class="dark:text-white hover:text-yellow-600 dark:hover:text-yellow-600"
+          >About Us</a
+        >
+      </li>
+      <li>
+        <a
+          href="{{ url_for('events') }}"
+          class="dark:text-white hover:text-yellow-600 dark:hover:text-yellow-600"
+          >Events</a
+        >
+      </li>
+    </div>
+    <!-- Button at the Bottom -->
+    <div class="pt-4 mt-auto">
+      <a
+        href="https://www.facebook.com/PizzaPy.PH"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center justify-center w-full px-4 py-2 text-gray-900 transition duration-150 ease-in-out bg-gray-300 border border-gray-300 rounded-lg sm:w-auto sm:px-6 sm:py-3 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 dark:text-white dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-gray-800">
+        Contact Us
+      </a>
+    </div>
+  </ul>
+</div>

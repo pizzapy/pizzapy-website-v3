@@ -1,0 +1,135 @@
+<!-- Event Section Images -->
+<div class="flex flex-col lg:flex-row items-center justify-center bg-[#010d1e] p-8 gap-8">
+    <!-- Image Section -->
+    <div class="w-full p-4 lg:w-1/2">
+        <img src="../../../static/images/group.png" alt="Team Photo" class="w-full rounded-lg shadow-lg">
+    </div>
+    <!-- Text Section -->
+    <div class="flex flex-col w-full gap-6 p-8 text-white lg:w-1/2">
+        <div class="text-yellow-500 text-[20px] font-bold">OUR EVENTS</div>
+        <div class="text-[32px] lg:text-[56px] font-extrabold">Browse our past events.</div>
+        <p class="text-[16px] lg:text-[18px]">
+            Here are some of our past events and meet ups. If you’d like to catch up on our upcoming events,
+            please visit our event page.
+        </p>
+        <a href="https://www.facebook.com/groups/pizzapy.ph/" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center justify-center w-64 px-6 py-3 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-opacity-50">
+            View our Events
+        </a>
+    </div>
+</div>
+
+<!-- Scroller Section -->
+<div class="flex flex-col items-center justify-center w-full px-2 md:px-4 lg:px-8">
+    <div class="custom-wrapper">
+        <div class="custom-scroller custom-event-scroller-left"></div>
+    </div>
+</div>
+
+<style>
+    .custom-wrapper {
+        width: 90%;
+        max-width: 1536px;
+        margin-inline: auto;
+        height: 150px;
+        position: relative;
+        overflow: hidden;
+        mask-image: linear-gradient(to right,
+                rgba(0, 0, 0, 0),
+                rgba(0, 0, 0, 1) 20%,
+                rgba(0, 0, 0, 1) 80%,
+                rgba(0, 0, 0, 0));
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    @keyframes custom-scrollLeft {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .custom-scroller {
+        display: flex;
+        width: 200%;
+        height: 100%;
+        align-items: center;
+    }
+
+    .custom-event-scroller-left {
+        animation: custom-scrollLeft 30s linear infinite;
+    }
+
+    .custom-scroller:hover {
+        animation-play-state: paused;
+    }
+
+    .custom-item {
+        width: 300px;
+        height: 150px;
+        border-radius: 6px;
+        margin-right: 20px;
+        /* Increased margin for more space between images */
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .custom-item img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        display: block;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const scrollerLeft = document.querySelector('.custom-event-scroller-left');
+
+        function fetchAndPopulateEvents(url, scroller, isReverse = false) {
+            console.log('Fetching events from:', url);
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.events && data.events.length > 0) {
+                        populateScroller(scroller, data.events, isReverse);
+                    } else {
+                        console.error('No event data available');
+                    }
+                })
+                .catch(error => console.error('Error fetching events:', error));
+        }
+
+        function populateScroller(scroller, events, isReverse) {
+            const eventsList = isReverse ? events.slice().reverse() : events;
+            eventsList.forEach(event => {
+                const item = document.createElement('a');
+                item.href = event.link;
+                item.className = 'custom-item';
+                item.innerHTML = `<img src="${event.image}" alt="${event.name}" class="object-cover" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x150?text=Image+Not+Found';">`;
+                scroller.appendChild(item);
+            });
+
+            const items = Array.from(scroller.children);
+            items.forEach(item => {
+                const clone = item.cloneNode(true);
+                scroller.appendChild(clone);
+            });
+        }
+
+        fetchAndPopulateEvents('../../../static/data/events.json', scrollerLeft);
+    });
+</script>
