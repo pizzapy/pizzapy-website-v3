@@ -11,7 +11,7 @@
     </h1>
     <h1
       class="font-bold text-yellow-500 text-[36px] md:text-[48px] lg:text-[72px] text-center leading-tight">
-      an event near you.
+      An event near you.
     </h1>
   </div>
 
@@ -19,6 +19,7 @@
   <div class="flex justify-center w-full py-10">
     <div
       class="w-11/12 max-w-screen-lg bg-white border border-gray-300 rounded-lg shadow-lg">
+      {% if first_event %}
       <div class="flex items-center px-4 py-2 bg-gray-900 rounded-t-lg">
         <div class="flex items-center space-x-1.5">
           <span class="w-3 h-3 bg-red-500 rounded-full"></span>
@@ -64,11 +65,16 @@
         <a id="event-link" href="{{ first_event.shortUrl }}" target="_blank">
           <img
             id="event-image"
-            src="{{ first_event.images.0.source }}"
+            src="{{ first_event.images[0].source }}"
             alt="{{ first_event.title }}"
             class="object-cover w-full h-full rounded-b-lg transition-opacity duration-500 opacity-100" />
         </a>
       </div>
+      {% else %}
+      <div class="flex items-center px-4 py-2 bg-gray-900 rounded-t-lg">
+        <p class="text-white">No upcoming events available.</p>
+      </div>
+      {% endif %}
     </div>
   </div>
 </div>
